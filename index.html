@@ -1,86 +1,166 @@
 <!DOCTYPE HTML>
 <html>
-	<head>
-		<title>Mathematical Visualizers</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<head>
+    <title>Mathematical Visualizers</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <style>
+        /* Basic Reset */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
 
-		<!-- Sidebar -->
-			<section id="sidebar">
-				<div class="inner">
-					<nav>
-						<ul>
-							<li><a href="#intro">Home</a></li>
-							<li><a href="#features">Features</a></li>
-							<li><a href="#download">Download</a></li>
-						</ul>
-					</nav>
-				</div>
-			</section>
+        body {
+            background: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+        /* Sidebar */
+        #sidebar {
+            background: #003366;
+            color: white;
+            padding: 20px;
+            position: fixed;
+            height: 100%;
+            width: 250px;
+            left: 0;
+            top: 0;
+        }
 
-				<!-- Intro -->
-					<section id="intro" class="wrapper style1 fullscreen fade-up">
-						<div class="inner">
-							<h1>Mathematical Visualizers</h1>
-							<p>An interactive suite for exploring mathematical concepts through visualization.</p>
-							<ul class="actions">
-								<li><a href="#features" class="button scrolly">Learn More</a></li>
-							</ul>
-						</div>
-					</section>
+        #sidebar nav ul {
+            list-style: none;
+            padding: 0;
+        }
 
-				<!-- Features -->
-					<section id="features" class="wrapper style2 spotlights">
-						<section>
-							<div class="content">
-								<div class="inner">
-									<h2>Key Features</h2>
-									<ul>
-										<li>Collatz Conjecture Visualizer with real-time step tracking.</li>
-										<li>Pi Approximation using Monte Carlo, Leibniz, and Nilakantha methods.</li>
-										<li>Mandelbrot Fractal Explorer with zoom and pan functionality.</li>
-										<li>Prime Number Distribution Visualizer.</li>
-									</ul>
-								</div>
-							</div>
-						</section>
-					</section>
+        #sidebar nav ul li {
+            padding: 10px 0;
+        }
 
-				<!-- Download -->
-					<section id="download" class="wrapper style3 fade-up">
-						<div class="inner">
-							<h2>Download</h2>
-							<p>Download the executable version of the Mathematical Visualizers suite.</p>
-							<a href="https://your-hosting-link.com/MathVisualizers.exe" class="button primary" download>Download EXE</a>
-						</div>
-					</section>
+        #sidebar nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
 
-			</div>
+        #sidebar nav ul li a:hover {
+            text-decoration: underline;
+        }
 
-		<!-- Footer -->
-			<footer id="footer" class="wrapper style1-alt">
-				<div class="inner">
-					<ul class="menu">
-						<li>&copy; 2025 Mathematical Visualizers. All rights reserved.</li>
-					</ul>
-				</div>
-			</footer>
+        /* Wrapper */
+        #wrapper {
+            margin-left: 270px;
+            padding: 20px;
+        }
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+        /* Intro */
+        #intro {
+            background: #0055a5;
+            color: white;
+            padding: 50px;
+            text-align: center;
+        }
 
-	</body>
+        #intro h1 {
+            font-size: 2.5em;
+        }
+
+        /* Sections */
+        .wrapper {
+            background: white;
+            padding: 40px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #003366;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            list-style: disc inside;
+            margin-bottom: 20px;
+        }
+
+        /* Download Button */
+        .button {
+            display: inline-block;
+            background: #003366;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: background 0.3s ease;
+        }
+
+        .button:hover {
+            background: #0073e6;
+        }
+
+        /* Footer */
+        footer {
+            background: #003366;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <section id="sidebar">
+        <div class="inner">
+            <nav>
+                <ul>
+                    <li><a href="#intro">Home</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#download">Download</a></li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Intro -->
+        <section id="intro">
+            <h1>Mathematical Visualizers</h1>
+            <p>An interactive suite for exploring mathematical concepts through visualization.</p>
+        </section>
+
+        <!-- Features -->
+        <section id="features" class="wrapper">
+            <h2>Key Features</h2>
+            <ul>
+                <li>Collatz Conjecture Visualizer with real-time step tracking.</li>
+                <li>Pi Approximation using Monte Carlo, Leibniz, and Nilakantha methods.</li>
+                <li>Mandelbrot Fractal Explorer with zoom and pan functionality.</li>
+                <li>Prime Number Distribution Visualizer.</li>
+            </ul>
+        </section>
+
+        <!-- Download -->
+        <section id="download" class="wrapper">
+            <h2>Download</h2>
+            <p>Download the executable version of the Mathematical Visualizers suite.</p>
+            <a href="https://your-hosting-link.com/MathVisualizers.exe" class="button" download>Download EXE</a>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Mathematical Visualizers. All rights reserved.</p>
+    </footer>
+
+</body>
 </html>
